@@ -1,7 +1,7 @@
 Thời gian bắt đầu: 21/09/2025  
 Thời gian kết thúc: 27/09/2025  
 
-## Kế hoạch học tập 1 tuần
+Kế hoạch học tập 1 tuần
 1. Ôn tập toàn bộ lệnh Git đã học.
 2. Thực hành tạo branch, merge, xử lý xung đột.
 3. Viết commit message chuẩn mực, có ngữ nghĩa.
@@ -12,12 +12,11 @@ Thời gian kết thúc: 27/09/2025
 8. Viết tài liệu README chi tiết hơn.
 9. Dành thời gian ôn cấu trúc dữ liệu và giải thuật.
 10. Chốt lại kiến thức qua mini project.
-<<<<<<< Updated upstream
+Updated upstream
 - Ôn tập Git stash và stash apply.
 - Viết lại kế hoạch học tập tuần sau.
 - Tổng kết commit message theo chuẩn.
 - Chuẩn bị báo cáo cuối kỳ.
-=======
 - Rà soát merge conflict ở intro.txt.
 - Viết checklist chụp ảnh nộp bài.
->>>>>>> Stashed changes
+Stashed changes
