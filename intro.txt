@@ -7,3 +7,9 @@ Tôi thường ghi chép tiến độ học tập mỗi ngày.
 Sở thích: Chơi cầu lông; Lập trình các bài toán nhỏ; Đọc sách công nghệ.
 
 Kỹ năng: Git cơ bản, C#, SQL (mỗi kỹ năng ở mức đang cải thiện).
+Ke hoach hoc tap:
+1) Ôn lại các lệnh Git thường dùng (status, log, diff, checkout, restore).
+2) Thực hành branch/merge và tạo PR nhỏ mỗi ngày.
+3) Viết commit message chuẩn, có ngữ nghĩa.
+4) Luyện C# WinForms và SQL qua đồ án nhỏ.
+5) Ghi lại nhật ký học tập sau mỗi buổi.
