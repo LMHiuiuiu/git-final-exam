@@ -1,0 +1,7 @@
+Mô tả tính năng mới:
+
+1. Hệ thống có thể quản lý thông tin người dùng.
+2. Cho phép thêm, sửa, xóa dữ liệu dễ dàng.
+3. Tích hợp tìm kiếm nâng cao.
+4. Giao diện đơn giản, dễ sử dụng.
+5. Hỗ trợ xuất báo cáo dưới dạng PDF.
