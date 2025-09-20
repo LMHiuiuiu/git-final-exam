@@ -1,4 +1,6 @@
+Hello, this is Lam Minh Hieu.
 Xin chào, tôi là Lâm Minh Hiếu.
+Conflict resolved on 20/09/2025.
 Giới thiệu: Tôi là Lâm Minh Hiếu, sinh viên CNTT, yêu thích xây dựng phần mềm.
 Hiện đang học các môn lập trình và phát triển web.
 Mục tiêu ngắn hạn là thành thạo Git và kỹ năng làm việc nhóm.
