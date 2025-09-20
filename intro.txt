@@ -1,3 +1,4 @@
+Xin chào, tôi là Lâm Minh Hiếu.
 Giới thiệu: Tôi là Lâm Minh Hiếu, sinh viên CNTT, yêu thích xây dựng phần mềm.
 Hiện đang học các môn lập trình và phát triển web.
 Mục tiêu ngắn hạn là thành thạo Git và kỹ năng làm việc nhóm.
