@@ -1,3 +1,5 @@
 - Git giúp theo dõi lịch sử thay đổi rất rõ ràng.
 - Commit nhỏ, có ý nghĩa giúp làm việc nhóm hiệu quả.
 - Pull Request + Review giúp giữ chất lượng code.
+- Reset và Revert là hai kỹ thuật xử lý sai sót cực hữu ích.
+- Luôn viết commit message rõ ràng để dễ truy vết.
