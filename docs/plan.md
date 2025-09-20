@@ -12,7 +12,12 @@ Thời gian kết thúc: 27/09/2025
 8. Viết tài liệu README chi tiết hơn.
 9. Dành thời gian ôn cấu trúc dữ liệu và giải thuật.
 10. Chốt lại kiến thức qua mini project.
+<<<<<<< Updated upstream
 - Ôn tập Git stash và stash apply.
 - Viết lại kế hoạch học tập tuần sau.
 - Tổng kết commit message theo chuẩn.
 - Chuẩn bị báo cáo cuối kỳ.
+=======
+- Rà soát merge conflict ở intro.txt.
+- Viết checklist chụp ảnh nộp bài.
+>>>>>>> Stashed changes
