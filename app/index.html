@@ -1,0 +1,177 @@
+<!doctype html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Quản lý đặt sân cầu lông</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header class="container page-header">
+      <div>
+        <h1>🏸 Quản lý đặt sân cầu lông</h1>
+        <p>Phiên bản hoàn thiện cho đồ án 2: quản lý lịch, trạng thái, doanh thu và dữ liệu.</p>
+      </div>
+      <div class="actions">
+        <button id="export-btn" type="button" class="outline">Xuất JSON</button>
+        <label class="import-label" for="import-file">Nhập JSON</label>
+        <input id="import-file" type="file" accept="application/json" hidden />
+      </div>
+    </header>
+
+    <main class="container layout">
+      <section class="card stats" aria-label="Tổng quan">
+        <article>
+          <p>Tổng lịch đặt</p>
+          <h3 id="stat-total">0</h3>
+        </article>
+        <article>
+          <p>Lịch hôm nay</p>
+          <h3 id="stat-today">0</h3>
+        </article>
+        <article>
+          <p>Đã hoàn tất</p>
+          <h3 id="stat-completed">0</h3>
+        </article>
+        <article>
+          <p>Doanh thu (hoàn tất)</p>
+          <h3 id="stat-revenue">0 đ</h3>
+        </article>
+      </section>
+
+      <section class="card">
+        <h2 id="form-title">Tạo lịch đặt mới</h2>
+        <form id="booking-form">
+          <input id="editingId" type="hidden" />
+
+          <div class="row two-cols">
+            <label>
+              Tên người đặt
+              <input id="customerName" type="text" required placeholder="Ví dụ: Nguyễn Văn A" />
+            </label>
+
+            <label>
+              Số điện thoại
+              <input id="phone" type="tel" required pattern="[0-9]{9,11}" placeholder="Ví dụ: 0901234567" />
+            </label>
+          </div>
+
+          <div class="row four-cols">
+            <label>
+              Sân
+              <select id="court" required>
+                <option value="">-- Chọn sân --</option>
+                <option>Sân 1</option>
+                <option>Sân 2</option>
+                <option>Sân 3</option>
+                <option>Sân 4</option>
+              </select>
+            </label>
+
+            <label>
+              Ngày
+              <input id="date" type="date" required />
+            </label>
+
+            <label>
+              Giờ bắt đầu
+              <input id="startTime" type="time" required />
+            </label>
+
+            <label>
+              Giờ kết thúc
+              <input id="endTime" type="time" required />
+            </label>
+          </div>
+
+          <div class="row three-cols">
+            <label>
+              Trạng thái
+              <select id="status" required>
+                <option value="pending">Chờ xác nhận</option>
+                <option value="confirmed">Đã xác nhận</option>
+                <option value="completed">Hoàn tất</option>
+                <option value="cancelled">Đã hủy</option>
+              </select>
+            </label>
+
+            <label>
+              Giá sân / giờ (VND)
+              <input id="hourlyRate" type="number" min="0" step="10000" value="120000" required />
+            </label>
+
+            <label>
+              Phụ thu dịch vụ (VND)
+              <input id="serviceFee" type="number" min="0" step="10000" value="0" required />
+            </label>
+          </div>
+
+          <label>
+            Ghi chú
+            <textarea id="note" rows="2" placeholder="Ví dụ: đặt thêm vợt và 2 ống cầu"></textarea>
+          </label>
+
+          <div class="actions">
+            <button type="submit" id="save-btn">Thêm lịch đặt</button>
+            <button type="button" id="reset-btn" class="outline">Làm mới form</button>
+          </div>
+        </form>
+      </section>
+
+      <section class="card">
+        <div class="table-header">
+          <h2>Danh sách lịch đặt</h2>
+          <div class="filters">
+            <input id="search" type="search" placeholder="Tìm tên, SĐT hoặc sân" />
+            <select id="filterStatus">
+              <option value="">Tất cả trạng thái</option>
+              <option value="pending">Chờ xác nhận</option>
+              <option value="confirmed">Đã xác nhận</option>
+              <option value="completed">Hoàn tất</option>
+              <option value="cancelled">Đã hủy</option>
+            </select>
+            <input id="filterDate" type="date" />
+          </div>
+        </div>
+
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr>
+                <th>Khách</th>
+                <th>Sân</th>
+                <th>Thời gian</th>
+                <th>Trạng thái</th>
+                <th>Tổng tiền</th>
+                <th>Liên hệ</th>
+                <th>Ghi chú</th>
+                <th>Hành động</th>
+              </tr>
+            </thead>
+            <tbody id="booking-body"></tbody>
+          </table>
+        </div>
+      </section>
+    </main>
+
+    <template id="row-template">
+      <tr>
+        <td data-field="customer"></td>
+        <td data-field="court"></td>
+        <td data-field="time"></td>
+        <td data-field="status"></td>
+        <td data-field="total"></td>
+        <td data-field="phone"></td>
+        <td data-field="note"></td>
+        <td>
+          <div class="row-actions">
+            <button type="button" data-action="edit" class="small">Sửa</button>
+            <button type="button" data-action="delete" class="small danger">Xóa</button>
+          </div>
+        </td>
+      </tr>
+    </template>
+
+    <script src="script.js"></script>
+  </body>
+</html>
